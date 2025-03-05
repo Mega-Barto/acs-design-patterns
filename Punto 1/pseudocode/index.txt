@@ -1,0 +1,24 @@
+INICIO
+    lista ← [5, 2, 9, 1, 5, 6]
+
+    MOSTRAR "Seleccione algoritmo (burbuja, quicksort, insercion): "
+    LEER algoritmo
+    algoritmo ← convertir_a_minusculas(algoritmo)
+
+    MOSTRAR "Orden (asc/desc): "
+    LEER orden
+    ascendente ← (orden == "asc")
+
+    estrategias ← {
+        "burbuja": Bubble(),
+        "quicksort": QuickSort(),
+        "insercion": Insert()
+    }
+
+    SI algoritmo EN estrategias ENTONCES:
+        sorter ← Sorter(estrategias[algoritmo])
+        lista_ordenada ← sorter.sort(lista, ascendente)
+        MOSTRAR "Lista ordenada: ", lista_ordenada
+    SINO:
+        MOSTRAR "Algoritmo no válido."
+FIN

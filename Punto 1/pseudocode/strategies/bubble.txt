@@ -1,0 +1,7 @@
+CLASE Bubble HEREDA SortStrategy:
+    MÉTODO sort(lista, ascendente):
+        PARA i DESDE 0 HASTA longitud(lista) - 1 HACER:
+            PARA j DESDE 0 HASTA longitud(lista) - i - 1 HACER:
+                SI (ascendente Y lista[j] > lista[j+1]) O (NO ascendente Y lista[j] < lista[j+1]) ENTONCES:
+                    INTERCAMBIAR lista[j] Y lista[j+1]
+        RETORNAR lista

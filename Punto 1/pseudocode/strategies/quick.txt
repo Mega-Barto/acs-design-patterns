@@ -1,0 +1,13 @@
+CLASE QuickSort HEREDA SortStrategy:
+    MÉTODO sort(lista, ascendente):
+        SI longitud(lista) <= 1 ENTONCES:
+            RETORNAR lista
+        
+        pivote ← lista[0]
+        menores ← [elementos de lista menores a pivote]
+        mayores ← [elementos de lista mayores a pivote]
+        
+        SI ascendente ENTONCES:
+            RETORNAR sort(menores, ascendente) + [pivote] + sort(mayores, ascendente)
+        SINO:
+            RETORNAR sort(mayores, ascendente) + [pivote] + sort(menores, ascendente)
