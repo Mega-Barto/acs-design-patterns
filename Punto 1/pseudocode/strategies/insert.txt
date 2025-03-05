@@ -1,0 +1,10 @@
+CLASE Insert HEREDA SortStrategy:
+    MÉTODO sort(lista, ascendente):
+        PARA i DESDE 1 HASTA longitud(lista) - 1 HACER:
+            valor ← lista[i]
+            j ← i - 1
+            MIENTRAS j >= 0 Y ((ascendente Y lista[j] > valor) O (NO ascendente Y lista[j] < valor)) HACER:
+                lista[j+1] ← lista[j]
+                j ← j - 1
+            lista[j+1] ← valor
+        RETORNAR lista

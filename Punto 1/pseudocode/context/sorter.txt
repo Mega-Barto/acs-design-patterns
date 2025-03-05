@@ -1,0 +1,8 @@
+CLASE Sorter:
+    ATRIBUTO estrategia
+
+    MÉTODO CONSTRUCTOR(estrategia):
+        ASIGNAR estrategia A estrategia
+
+    MÉTODO sort(lista, ascendente):
+        RETORNAR estrategia.sort(lista, ascendente)
