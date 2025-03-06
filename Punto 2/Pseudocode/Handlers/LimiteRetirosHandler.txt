@@ -1,0 +1,17 @@
+INCLUIR "Handler.txt"
+
+CLASE LimiteRetirosHandler HEREDA Handler
+    ATRIBUTO cuenta
+
+    CONSTRUCTOR(cuenta)
+        cuenta ← cuenta
+    FIN CONSTRUCTOR
+
+    MÉTODO handle(request)
+        SI request.tipo = "retiro" Y cuenta.retirosSemana ≥ 2 ENTONCES
+            IMPRIMIR "Límite de retiros alcanzado."
+            RETORNAR FALSO
+        FIN SI
+        RETORNAR SUPER.handle(request)
+    FIN MÉTODO
+FIN CLASE

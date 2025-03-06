@@ -1,0 +1,15 @@
+INCLUIR "Handler.psc"
+INCLUIR "../models/Autorizador.psc"
+
+CLASE AutorizacionRetirosHandler HEREDA Handler
+    MÉTODO handle(request)
+        SI request.tipo = "retiro" Y request.monto > 10000 ENTONCES
+            IMPRIMIR "Se requiere autorización para el retiro."
+            SI NO Autorizador.solicitarAutorizacion() ENTONCES
+                IMPRIMIR "Retiro no autorizado."
+                RETORNAR FALSO
+            FIN SI
+        FIN SI
+        RETORNAR SUPER.handle(request)
+    FIN MÉTODO
+FIN CLASE
