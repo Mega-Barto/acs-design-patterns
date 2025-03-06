@@ -1,0 +1,10 @@
+INCLUIR "Handler.psc"
+
+CLASE ControlLavadoHandler HEREDA Handler
+    MÉTODO handle(request)
+        SI request.tipo = "deposito" Y request.monto > 5000 ENTONCES
+            IMPRIMIR " Depósito alto, informando a control de lavado de dinero."
+        FIN SI
+        RETORNAR SUPER.handle(request)
+    FIN MÉTODO
+FIN CLASE

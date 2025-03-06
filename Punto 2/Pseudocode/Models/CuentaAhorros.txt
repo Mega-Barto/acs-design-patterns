@@ -1,0 +1,39 @@
+INCLUIR "../handlers/LimiteRetirosHandler.txt"
+INCLUIR "../handlers/AutorizacionRetirosHandler.txt"
+INCLUIR "../handlers/ControlLavadoHandler.txt"
+
+CLASE CuentaAhorros
+    ATRIBUTOS saldo, retirosSemana
+
+    CONSTRUCTOR(saldoInicial)
+        saldo ← saldoInicial
+        retirosSemana ← 0
+    FIN CONSTRUCTOR
+
+    MÉTODO procesarOperacion(tipo, monto)
+        DEFINIR handlerChain COMO LimiteRetirosHandler(this)
+        handlerChain.setNext(AutorizacionRetirosHandler())
+        handlerChain.setNext(ControlLavadoHandler())
+
+        DEFINIR request COMO { tipo: tipo, monto: monto }
+        SI NO handlerChain.handle(request) ENTONCES
+            RETORNAR
+        FIN SI
+
+        SI tipo = "retiro" ENTONCES
+            SI saldo ≥ monto ENTONCES
+                saldo ← saldo - monto
+                retirosSemana ← retirosSemana + 1
+                IMPRIMIR " Retiro exitoso."
+            SINO
+                IMPRIMIR " Saldo insuficiente."
+            FIN SI
+        SINO SI tipo = "deposito" ENTONCES
+            saldo ← saldo + monto
+        FIN SI
+    FIN MÉTODO
+
+    MÉTODO saldo()
+        RETORNAR saldo
+    FIN MÉTODO
+FIN CLASE

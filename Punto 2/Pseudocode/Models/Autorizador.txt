@@ -1,0 +1,6 @@
+CLASE Autorizador
+    MÉTODO ESTÁTICO solicitarAutorizacion()
+        IMPRIMIR " Solicitud de autorización en proceso..."
+        RETORNAR VERDADERO  // Simulación de aprobación automática
+    FIN MÉTODO
+FIN CLASE

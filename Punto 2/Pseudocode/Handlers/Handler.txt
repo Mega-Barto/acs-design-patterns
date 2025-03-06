@@ -1,0 +1,15 @@
+CLASE Handler
+    ATRIBUTO siguienteHandler
+
+    MÉTODO setNext(handler)
+        siguienteHandler ← handler
+        RETORNAR handler
+    FIN MÉTODO
+
+    MÉTODO handle(request)
+        SI siguienteHandler ≠ NULO ENTONCES
+            RETORNAR siguienteHandler.handle(request)
+        FIN SI
+        RETORNAR VERDADERO
+    FIN MÉTODO
+FIN CLASE
