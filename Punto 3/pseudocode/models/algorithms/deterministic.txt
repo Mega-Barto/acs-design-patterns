@@ -1,0 +1,11 @@
+CLASE DeterministicAlgorithm IMPLEMENTA AlgorithmOptimization:
+    MÉTODO update(state):
+        IMPRIMIR "[Deterministic Algorithm] Running demand forecast..."
+
+        PARA CADA producto, cantidad EN state["products"]:
+            forecasted_demand ← cantidad * 0.2  # Suponiendo un 20% de consumo diario
+            suggested_stock ← cantidad + forecasted_demand
+
+            IMPRIMIR "🔍 ", producto, ": Current stock = ", cantidad, ", Recommended stock = ", suggested_stock
+
+        IMPRIMIR "[Deterministic Algorithm] Optimization complete."

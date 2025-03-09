@@ -1,0 +1,21 @@
+CLASE Inventory:
+    PRIVADO observers: LISTA<AlgorithmOptimization>
+    PRIVADO state: DICCIONARIO
+
+    MÉTODO Constructor():
+        observers ← LISTA VACÍA
+        state ← DICCIONARIO VACÍO
+
+    MÉTODO add_observer(observer: AlgorithmOptimization):
+        AGREGAR observer A observers
+
+    MÉTODO remove_observer(observer: AlgorithmOptimization):
+        ELIMINAR observer DE observers
+
+    MÉTODO notify_observers():
+        PARA CADA observer EN observers:
+            observer.update(state)
+
+    MÉTODO update_state(nuevo_estado: DICCIONARIO):
+        state ← nuevo_estado
+        notify_observers()

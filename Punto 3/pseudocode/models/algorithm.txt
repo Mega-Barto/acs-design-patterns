@@ -1,0 +1,2 @@
+CLASE ABSTRACTA AlgorithmOptimization:
+    MÉTODO ABSTRACTO update(state)

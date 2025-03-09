@@ -1,0 +1,19 @@
+INICIAR
+    inventory ← NUEVO Inventory()
+
+    algorithm1 ← NUEVO SimpleAlgorithm()
+    algorithm2 ← NUEVO DeterministicAlgorithm()
+
+    inventory.add_observer(algorithm1)
+    inventory.add_observer(algorithm2)
+
+    estado_inicial ← {
+        "products": {
+            "Laptop": 30,
+            "Mouse": 100,
+            "Keyboard": 40
+        }
+    }
+
+    inventory.update_state(estado_inicial)
+FINALIZAR

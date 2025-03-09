@@ -1,0 +1,9 @@
+CLASE SimpleAlgorithm IMPLEMENTA AlgorithmOptimization:
+    MÉTODO update(state):
+        IMPRIMIR "[Simple Algorithm] Checking inventory..."
+
+        PARA CADA producto, cantidad EN state["products"]:
+            SI cantidad < 50 ENTONCES
+                IMPRIMIR "⚠ Warning: Low stock for ", producto, " (", cantidad, " units). Consider restocking."
+
+        IMPRIMIR "[Simple Algorithm] Optimization complete."
