@@ -1,0 +1,13 @@
+FUNCION calcular_precio_cuotas(precio, cuotas, marca, banco)
+    estrategia ← obtener_estrategia(marca)
+    SI estrategia = NULO ENTONCES
+        IMPRIMIR "Marca de tarjeta no válida"
+        RETORNAR
+    FIN SI
+    
+    INTERESES ← estrategia(banco, cuotas)
+    PRECIO_CUOTAS ← precio * (1 + INTERESES)
+    MONTO_CUOTA ← PRECIO_CUOTAS / cuotas
+
+    RETORNAR (PRECIO_CUOTAS, MONTO_CUOTA)
+FIN FUNCION

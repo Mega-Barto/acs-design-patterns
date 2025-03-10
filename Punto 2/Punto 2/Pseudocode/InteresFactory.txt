@@ -1,0 +1,8 @@
+FUNCION obtener_estrategia(marca)
+    SI marca = "Visa" ENTONCES
+        RETORNAR calcular_interes_visa
+    SINO SI marca = "MasterCard" ENTONCES
+        RETORNAR calcular_interes_mastercard
+    FIN SI
+    RETORNAR NULO
+FIN FUNCION

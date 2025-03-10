@@ -1,0 +1,9 @@
+FUNCION calcular_interes_visa(banco, cuotas)
+    SI banco = "Banco A" ENTONCES
+        RETORNAR 0.02 * cuotas
+    SINO SI banco = "Banco B" ENTONCES
+        RETORNAR 0.015 * cuotas
+    SINO
+        RETORNAR 0.018 * cuotas
+    FIN SI
+FIN FUNCION

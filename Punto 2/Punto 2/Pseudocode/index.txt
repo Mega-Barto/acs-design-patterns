@@ -1,0 +1,16 @@
+IMPRIMIR "Ingrese el precio del producto:"
+LEER precio
+
+IMPRIMIR "Ingrese la cantidad de cuotas:"
+LEER cuotas
+
+IMPRIMIR "Ingrese la marca de la tarjeta (Visa/MasterCard):"
+LEER marca
+
+IMPRIMIR "Ingrese el banco emisor:"
+LEER banco
+
+(precio_cuotas, monto_cuota) ← calcular_precio_cuotas(precio, cuotas, marca, banco)
+
+IMPRIMIR "Precio total en cuotas:", precio_cuotas
+IMPRIMIR "Monto por cuota:", monto_cuota

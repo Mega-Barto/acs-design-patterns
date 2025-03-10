@@ -1,0 +1,3 @@
+FUNCION calcular_interes_mastercard(banco, cuotas)
+    RETORNAR 0.018 * cuotas
+FIN FUNCION
